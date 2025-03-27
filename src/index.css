@@ -1,0 +1,93 @@
+@tailwind  base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --primary: 210 100% 40%;
+    --secondary: 215 25% 27%;
+    --accent: 25 95% 53%;
+    --background: 210 40% 98%;
+    --foreground: 215 25% 27%;
+    --card: 0 0% 100%;
+    --card-foreground: 215 25% 27%;
+    --muted: 220 14% 96%;
+    --muted-foreground: 215 20% 65%;
+  }
+
+  .dark {
+    --primary: 210 100% 50%;
+    --secondary: 215 25% 27%;
+    --accent: 25 95% 53%;
+    --background: 220 14% 10%;
+    --foreground: 220 14% 95%;
+    --card: 220 14% 15%;
+    --card-foreground: 220 14% 95%;
+    --muted: 220 14% 20%;
+    --muted-foreground: 220 14% 70%;
+  }
+}
+
+@layer base {
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* Map Styling */
+@keyframes pulse {
+  0% {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: translate(-50%, -50%) scale(1.1);
+    opacity: 0.8;
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
+  }
+}
+
+.map-marker {
+  @apply transition-all duration-300;
+}
+
+.map-marker:hover {
+  @apply scale-125;
+}
+
+.bus-marker {
+  @apply text-white p-2 bg-primary rounded-full flex items-center justify-center;
+}
+
+.start-marker {
+  @apply text-white p-1 bg-green-500 rounded-full flex items-center justify-center;
+}
+
+.end-marker {
+  @apply text-white p-1 bg-red-500 rounded-full flex items-center justify-center;
+}
+
+.waypoint-marker {
+  @apply text-white p-1 bg-blue-500 rounded-full flex items-center justify-center;
+}
+
+/* Map layer controls */
+.layer-control {
+  @apply bg-white rounded shadow text-sm p-2;
+}
+
+.layer-control-item {
+  @apply flex items-center mb-1 cursor-pointer hover:bg-muted/50 p-1 rounded;
+}
+
+.layer-control-item input {
+  @apply mr-2;
+}
+
+.layer-control-item label {
+  @apply cursor-pointer;
+}
+ 
